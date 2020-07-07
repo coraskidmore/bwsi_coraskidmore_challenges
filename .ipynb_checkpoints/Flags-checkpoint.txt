@@ -1,0 +1,10 @@
+intro_python--read_example: embsec{read_example_76f91d55ede4b873}
+intro_python--write_example: embsec{write_example_9115266bf31041d4}
+review_python--pythonsplitting_integers: embsec{splitting_integers_45481eca160ae4c9}
+review_python--skeleton_script: embsec{skeleton_script_38bc675704cd23ed}
+review_python--integer_flipping: embsec{integer_flipping_85f22878f31642f7}
+intro_c--read_example: embsec{read_example_76f91d55ede4b873}
+intro_c--write_example: embsec{write_example_9115266bf31041d4}
+protocol_lab--sending_data: embsec{sending_data_635ad609122df205}
+protocol_lab--heartbeat: embsec{heartbeat_6d37068aa757dfe7}
+protocol_lab--noise: embsec{noise_09aa68528bb4a5a9}
