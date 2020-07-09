@@ -13,10 +13,11 @@ review_c--int_to_bin: embsec{int_to_bin_0a3d0432a937c18a}
 review_c--anagram: embsec{anagram_52d624035db57d5b}
 flash_example: embsec{flash_example_bdb411ef60517638}
 uart_c: embsec{uart_challenge_d2da92ec4c201d31}
-io_python--echo_int:
-io_python--send_file:
+io_python--echo_int: embsec{echo_int_2f3194887223a2e8}
+io_python--send_file: embsec{send_file_0729ce0d695e78d7}
 io_python--send_large_file:
 io_c--echo_int:
 io_c--recv_file:
 io_c--recv_large_file:
 design--fw_protect: embsec{fw_protect_8b817d278c508735}
+design--fw_update: embsec{fw_update_4de5771b0ab60936}
