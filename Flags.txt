@@ -8,5 +8,15 @@ intro_c--write_example: embsec{write_example_9115266bf31041d4}
 protocol_lab--sending_data: embsec{sending_data_635ad609122df205}
 protocol_lab--heartbeat: embsec{heartbeat_6d37068aa757dfe7}
 protocol_lab--noise: embsec{noise_09aa68528bb4a5a9}
+protocal_lab--replay: 
 review_c--int_to_bin: embsec{int_to_bin_0a3d0432a937c18a}
+review_c--anagram: embsec{anagram_52d624035db57d5b}
 flash_example: embsec{flash_example_bdb411ef60517638}
+uart_c: embsec{uart_challenge_d2da92ec4c201d31}
+io_python--echo_int:
+io_python--send_file:
+io_python--send_large_file:
+io_c--echo_int:
+io_c--recv_file:
+io_c--recv_large_file:
+design--fw_protect: embsec{fw_protect_8b817d278c508735}

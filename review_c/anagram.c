@@ -5,55 +5,76 @@
 
 uint8_t isAnagram (char* str_a, char* str_b) {
     /* Your code goes here */
-    
+    int leta[26] = {0};
+    int letb[26] = {0};
     int i;
     for (i=0;i<=strlen(str_a);i++){
-        if (str_a[i]==' '){
-            str_a[i]=0;
+        if (str_a[i]!=' '){
+            leta[(str_a[i]-'a')]=leta[(str_a[i]-'a')]+1;
         }
     }
-    printf("%d",char*str_a);
     int k;
-    for (k=0;k<=strlen(str_b);k++){
+    for (k=0; k<=strlen(str_b);k++){
         if (str_b[k]!=' '){
-            str_b[k]=0;
+            letb[(str_b[k]-'a')]=letb[(str_b[k]-'a')]+1;
+        }
+    }    
+    int l;
+    for (l=0;l<26;l++){
+        if (leta[l]!=letb[l]){
+            return 0;
         }
     }
-    printf("%d",char*str_b);
-    char same=0;
-    int a;
-    for (a=0;a<=strlen(str_a);a++){
-        int b;
-        for (b=0;b<=strlen(str_b);b++){
-            if (str_a[a]==str_b[b]){
-                str_a[a]=0;
-                str_b[b]=0;
-                same=1;
-                break;
-            }
-        if (same==1){
-            same=0;
-            break;
-        }
-        }
-    }
-    int c;
-    char asum=0;
-    for (c=0;c<=strlen(str_a);c++){
-        asum=asum+str_a[c];
-    }
-    int d;
-    char bsum=0;
-    for (d=0;d<=strlen(str_b);d++){
-        bsum=bsum+str_b[d];
-    }
-    if(asum==0){
-        if (bsum==0){
-            return 1;
-        } 
-    }
+    return 1;
     
-    return 0;
+//     int i;
+//     for (i=0;i<=strlen(str_a);i++){
+//         if (str_a[i]==' '){
+//             str_a[i]=0;
+//         }
+//     }
+//     printf("%d",char*str_a);
+//     int k;
+//     for (k=0;k<=strlen(str_b);k++){
+//         if (str_b[k]!=' '){
+//             str_b[k]=0;
+//         }
+//     }
+//     printf("%d",char*str_b);
+//     char same=0;
+//     int a;
+//     for (a=0;a<=strlen(str_a);a++){
+//         int b;
+//         for (b=0;b<=strlen(str_b);b++){
+//             if (str_a[a]==str_b[b]){
+//                 str_a[a]=0;
+//                 str_b[b]=0;
+//                 same=1;
+//                 break;
+//             }
+//         if (same==1){
+//             same=0;
+//             break;
+//         }
+//         }
+//     }
+//     int c;
+//     char asum=0;
+//     for (c=0;c<=strlen(str_a);c++){
+//         asum=asum+str_a[c];
+//     }
+//     int d;
+//     char bsum=0;
+//     for (d=0;d<=strlen(str_b);d++){
+//         bsum=bsum+str_b[d];
+//     }
+//     if(asum==0){
+//         if (bsum==0){
+//             return 1;
+//         } 
+//     }
+    
+//     return 0;
 } 
 
 int main () {
