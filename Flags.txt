@@ -21,3 +21,4 @@ io_c--recv_file:
 io_c--recv_large_file:
 design--fw_protect: embsec{fw_protect_8b817d278c508735}
 design--fw_update: embsec{fw_update_4de5771b0ab60936}
+interrupt_c: embsec{interrupt_challenge_2b80772fd396aa1d}
