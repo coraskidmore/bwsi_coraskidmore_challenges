@@ -132,7 +132,10 @@ void load_firmware(void)
   nl(UART2);
 
   // TODO: Read the firmware size from the fw_update tool
-
+  rcv = uart_read(UART1, BLOCKING, &read);
+  size = (uint32_t)rcv;
+  rcv = uart_read(UART1, BLOCKING, &read);
+  size |= (uint32_t)rcv << 8;
 
   // Compare to old version and abort if older (note special case for version 0).
   uint16_t old_version = *fw_version_address;
@@ -154,7 +157,34 @@ void load_firmware(void)
   uart_write(UART1, OK); // Acknowledge the metadata.
 
   // TODO: Load the firmware into flash memory at 0x10000
-
+  int current_data;
+  int count = 0;
+  int tempFW_BASE;
+  tempFW_BASE = FW_BASE;
+  while (1){
+    uint32_t rcv = uart_read(UART1, BLOCKING, &read);
+    frame_length = (uint32_t)rcv <<8;
+    rcv = uart_read(UART1, BLOCKING, &read);
+    frame_length |= (uint32_t)rcv;
+    if (frame_length == 0){
+        break;
+    }
+    for (int i=0; i<frame_length;i++){
+        current_data = uart_read(UART1, BLOCKING, &read);
+        data[count] = current_data;
+        count++;
+        if (count == 1024){
+            program_flash(tempFW_BASE, data, frame_length);
+            tempFW_BASE+=1024;
+            count = 0;
+            memset(data, 0, count);
+        }
+    }
+    uart_write(UART2, 0);
+  }
+  if (count > 0){
+      program_flash(tempFW_BASE, data, frame_length);
+  }
 }
 
 
@@ -200,9 +230,21 @@ void boot_firmware(void)
     // No firmware installed. Return to main
     return;
   }
-
+  uint16_t release_mess_address = (fw_size_address+fw_size+2);
+  uart_write_str(UART2, release_mess_address);
+    
+    
+//   while (*release_mess_address!="\0");
+//     release_mess=*release_mess_address;
+//     uart_write_str(UART2,release_mess);
+//     release_mess_address++;
+      
   // TODO: Print release message
-
+  
   // TODO: Boot the firmware
+    __asm(
+    "LDR R0,=0x10001\n\t"
+    "BX R0\n\t"
+  );
 
 }

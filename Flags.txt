@@ -22,3 +22,6 @@ io_c--recv_large_file:
 design--fw_protect: embsec{fw_protect_8b817d278c508735}
 design--fw_update: embsec{fw_update_4de5771b0ab60936}
 interrupt_c: embsec{interrupt_challenge_2b80772fd396aa1d}
+aes_python--aes_decrypt: embsec{aes_decrypt_bca893959f3abfc3}
+aes_python--aes_encrypt_file: embsec{aes_encrypt_file_cb122c920ffff424}
+aes_python--aes_encrypted_echo

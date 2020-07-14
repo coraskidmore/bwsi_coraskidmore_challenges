@@ -158,7 +158,7 @@ void load_firmware(void)
 
   // TODO: Load the firmware into flash memory at 0x10000
   int current_data;
-  int count == 0;
+  int count = 0;
   int tempFW_BASE;
   tempFW_BASE = FW_BASE;
   while (1){
@@ -242,6 +242,9 @@ void boot_firmware(void)
   // TODO: Print release message
   
   // TODO: Boot the firmware
-    
+    __asm(
+    "LDR R0,=0x10001\n\t"
+    "BX R0\n\t"
+  );
 
 }
