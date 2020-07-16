@@ -25,3 +25,7 @@ interrupt_c: embsec{interrupt_challenge_2b80772fd396aa1d}
 aes_python--aes_decrypt: embsec{aes_decrypt_bca893959f3abfc3}
 aes_python--aes_encrypt_file: embsec{aes_encrypt_file_cb122c920ffff424}
 aes_python--aes_encrypted_echo
+aes_c--aes_decrypt: embsec{aes_decrypt_bca893959f3abfc3}
+aes_c--aes_encrypted_echo: 
+hmac_python--hmac_generate: embsec{hmac_generate_6a65fc57c238a1d9}
+hmac_python--hmac_verify: embsec{hmac_verify_fdf7a870fd0862fc}
