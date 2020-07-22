@@ -31,3 +31,4 @@ hmac_python--hmac_generate: embsec{hmac_generate_6a65fc57c238a1d9}
 hmac_python--hmac_verify: embsec{hmac_verify_fdf7a870fd0862fc}
 one_time_pad--xor: embsec{xor_8fef82b5f5d4bb1f}
 one_time_pad--two_time_pad: embsec{two_time_pad_5a2dab49608eeda7}
+spa_lab--easy: embsec{spa_easy_ec61b6330c04893a}
